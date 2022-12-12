@@ -1,0 +1,250 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    box-shadow: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-size: 50px;
+    line-height: 64px;
+    color: #222;
+}
+
+h2 {
+    font-size: 46px;
+    line-height: 54px;
+    color: #222;
+    text-align: center;
+}
+
+h4 {
+    font-size: 20px;
+    color: #222;
+}
+
+h6 {
+    font-weight: 700;
+    font-size: 12px;
+}
+
+p {
+    font-size: 16px;
+    color: #465b52;
+    margin: 15px 0 20px 0;
+}
+
+.section {
+    padding: 40px 80px;
+}
+
+
+body {
+    width: 100%;
+    background-color: #088178;
+}
+
+ /* NavBar */
+
+ #header {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 20px 80px;
+     background-color: #999ba1;
+     box-shadow: 0 5px 15px rgba( 0, 0, 0, 0.06);
+     z-index: 999;
+     position: sticky;
+     top: 0;
+     left: 0;
+ }
+
+ .logo { 
+     text-align: start;
+     padding: 0;
+ }
+
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#navbar > li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+
+#navbar > li > a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: 0.3s ease;
+}
+
+#navbar > li > a:hover,
+#navbar > li > a.active {
+    color: #088178;
+}
+
+#navbar > li > a.active::after,
+#navbar > li > a:hover::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background:  #088178;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+/* Home */
+
+#banner{
+    background-image: url("../images/bacground1.png");
+    height: 90vh;
+    width: 100%;
+    background-size: cover;
+    background-position: top 25% right 0;
+ }
+
+ .div {
+    background-color: #088178;
+ }
+
+ hr {
+    margin: 0%;
+    color: #1a1a1a;
+ }
+
+ .section{
+    width: 100%;
+    background-color: #088178;
+ }
+
+ #feature{
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     flex-wrap: wrap;
+ }
+
+ #feature > .featured-item {
+     width: 180px;
+     text-align: center;
+     padding: 25px 15px;
+     box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
+     border: 1px solid #cce7d0;
+     border-radius: 4px;
+     margin: 15px 0;
+
+ }
+
+ #feature > .featured-item > img {
+     width: 100%;
+     margin-bottom: 10px;
+ }
+
+ #feature > .featured-item > button {
+     padding: 9px 8px 6px 8px;
+     line-height: 1;
+     border-radius: 4px;
+     color: #088178;
+     background-color: #cdebbc;
+ }
+
+ img {
+     width: 150px;
+     height: 135px;
+     border-radius: 5px;
+ }
+
+ footer {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #999ba1;
+ }
+
+ footer > .contact {
+    padding: 25px;
+ }
+
+ footer > h4 {
+     font-size: 20px;
+ }
+
+ footer > p {
+    font-size: 15px;
+}
+
+footer > .copyright {
+    padding-top: 202px;
+    padding-right: 70px;
+    margin: auto;
+}
+
+/* Checkout nad Admin */
+
+#checkout {
+    background-color: #088178;
+    height: auto;
+    padding: 100px;
+}
+
+#checkout > #sort {
+    gap: 20px;
+}
+
+#checkout > #sort > button {
+   background-color: #cdebbc; 
+   width: 90px;
+   height: 40px;
+   border-radius: 10px;
+}
+
+#checkout > table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px; 
+}
+
+#checkout > table > thead {
+    font-weight: 700;
+}
+
+td {
+    border: 2px solid #999ba1;
+    text-align: center;
+    padding: 10px;
+}
+
+td > input {
+    width: 50px;
+    padding-left: 10px;
+}
+
+td > button {
+    width: 90px;
+    height: 40px;
+    text-align: center;
+    padding-left: 10px;
+    background-color: #cdebbc;
+    border-radius: 10px;
+}
+
+td > button > p {
+    padding-bottom: 20px;
+    padding-right: 5px;
+}
+
+
+
+/* Media Query */
+
