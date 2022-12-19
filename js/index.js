@@ -1,16 +1,20 @@
-let checkout = JSON.parse(localStorage.getItem('checkout')) ?  JSON.parse(localStorage.getItem('checkout')) : [] 
+let checkout = JSON.parse(localStorage.getItem("checkout"))
+  ? JSON.parse(localStorage.getItem("checkout"))
+  : [];
 
 let feature = [
   {
     id: 1,
-    productImage: "https://image.tfgmedia.co.za/image/1/process/486x486?source=https://cdn.tfgmedia.co.za/02/ProductImages/59579916.jpg",
-    productName: " NAVY/WHITE YARN DYE CHECK LINEN POORBOY HAT",
+    productImage:
+      "https://image.tfgmedia.co.za/image/1/process/486x486?source=https://cdn.tfgmedia.co.za/02/ProductImages/59579916.jpg",
+    productName: "NAVY/WHITE YARN DYE CHECK LINEN POORBOY HAT",
     productPrice: 350,
     productQuantity: 1,
   },
   {
     id: 2,
-    productImage: "https://image.tfgmedia.co.za/image/1/process/486x486?source=https://cdn.tfgmedia.co.za/02/ProductImages/59579928.jpg",
+    productImage:
+      "https://image.tfgmedia.co.za/image/1/process/486x486?source=https://cdn.tfgmedia.co.za/02/ProductImages/59579928.jpg",
     productName: "CREAM 8 PANEL LINEN NEWBOY POORBOY HAT",
     productPrice: 350,
     productSize: "s",
@@ -18,14 +22,16 @@ let feature = [
   },
   {
     id: 3,
-    productImage: "https://image.tfgmedia.co.za/image/1/process/486x486?source=https://cdn.tfgmedia.co.za/02/ProductImages/59603376.jpg",
+    productImage:
+      "https://image.tfgmedia.co.za/image/1/process/486x486?source=https://cdn.tfgmedia.co.za/02/ProductImages/59603376.jpg",
     productName: "NATURAL FLATCAP STRIPED LINEN HAT",
     productPrice: 350,
     productQuantity: 1,
   },
   {
     id: 4,
-    productImage: "https://image.tfgmedia.co.za/image/1/process/486x486?source=https://cdn.tfgmedia.co.za/02/ProductImages/59575140.jpg",
+    productImage:
+      "https://image.tfgmedia.co.za/image/1/process/486x486?source=https://cdn.tfgmedia.co.za/02/ProductImages/59575140.jpg",
     productName: "BLACK IVY FLATCAP WITH BACKSTRAP HAT",
     productPrice: 350,
     productQuantity: 1,
@@ -56,8 +62,7 @@ productDisplay();
 
 const checkOutBtn = document.querySelector(".check-out");
 function addToCheck(id) {
-  let currentProduct = products[id - 1 ];
+  let currentProduct = products[id - 1];
   checkout.push(currentProduct);
   localStorage.setItem("checkout", JSON.stringify(checkout));
-  console.log();
 }

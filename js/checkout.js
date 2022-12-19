@@ -4,7 +4,7 @@ function displayChecklist() {
   for (let i = 0; i < products.length; i++) {
     checkoutEl.innerHTML += `
         <tr>
-           <td><button>🚮</button></td>
+           <td><button class="delete">🚮</button></td>
            <td>${products[i].id}</td>
            <td><img src="${products[i].productImage}" alt=""></td>
            <td>${products[i].productName}</td>
@@ -24,4 +24,20 @@ let total = document.querySelector(".priceTotal");
 function displayTotal() {
   const amount = productTotal();
 }
+
+let deleteBtn = [...document.querySelectorAll(".delete")];
+let productName = document.querySelector('')
+Object.keys(deleteBtn).forEach((item) => {
+deleteBtn[item].addEventListener('click', (e) => {
+  let index = item;
+  products = products.splice(...index, 1)
+  location.reload()
+}) 
+
+
+})
+
+// function deleteProduct (id) {
+  
+// }
 

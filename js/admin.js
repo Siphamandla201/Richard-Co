@@ -1,5 +1,5 @@
-// let products;
 let products = JSON.parse(localStorage.getItem("products"));
+
 function display() {
   console.log(products);
 
@@ -43,3 +43,22 @@ function addProduct() {
   productDisplay();
 }
 
+let sortByNameBtn = document.querySelector('#sort-name') 
+sortByNameBtn.addEventListener('click', () => {
+  document.querySelector(".table-body").innerHTML = ""
+  products.sort((a, b)=>{
+    return a.productName < b.productName ? -1 : 1
+  })
+  display();
+  localStorage.setItem("products", JSON.stringify(products));
+})
+
+let sortByNumberBtn = document.querySelector('#sort-number')
+sortByNumberBtn.addEventListener('click', () => {
+  document.querySelector(".table-body").innerHTML = ""
+  products.sort((a, b)=>{
+    return a.id > b.id ? -1 : 1
+  })
+  display();
+  localStorage.setItem("products", JSON.stringify(products));
+})
