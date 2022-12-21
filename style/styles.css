@@ -74,6 +74,10 @@ body {
     justify-content: center;
 }
 
+#navbar > ul {
+    text-align: end;
+}
+
 
 #navbar > li {
     list-style: none;
@@ -107,8 +111,8 @@ body {
 
 /* Home */
 
-#banner{
-    background-image: url("../images/bacground1.png");
+#banner > img {
+    /* background-image: url("../assets/images/bacground1.png"); */
     height: 90vh;
     width: 100%;
     background-size: cover;
@@ -204,10 +208,27 @@ footer > .copyright {
 
 #checkout > #sort > button {
    background-color: #cdebbc; 
-   width: 90px;
-   height: 40px;
+   width: 170px;
+   height: 45px;
    border-radius: 10px;
 }
+
+#checkout > #sort > button:hover {
+    background-color:#999ba1;
+}
+
+#checkout > #sort > select {
+    background-color: #cdebbc; 
+    width: 180px;
+    height: 45px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+#checkout > #sort > select:hover {
+    background-color:#999ba1;
+}
+
 
 #checkout > table {
     width: 100%;
@@ -246,5 +267,17 @@ td > button > p {
 
 
 
+#priceTotal > #amount {
+    border: 2px solid #999ba1;
+    margin-left: 10px;
+    width: 70px;
+}
+
+
+
 /* Media Query */
+
+@media screen {
+    
+}
 

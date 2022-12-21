@@ -1,7 +1,8 @@
 const checkoutEl = document.querySelector("#checklistDisplay");
+console.log(products);
 function displayChecklist() {
-  products = JSON.parse(localStorage.getItem("checkout")) || [];
   for (let i = 0; i < products.length; i++) {
+    let products = JSON.parse(localStorage.getItem("checkout")) || [];
     checkoutEl.innerHTML += `
         <tr>
            <td><button class="delete">🚮</button></td>
@@ -25,19 +26,49 @@ function displayTotal() {
   const amount = productTotal();
 }
 
-let deleteBtn = [...document.querySelectorAll(".delete")];
-let productName = document.querySelector('')
-Object.keys(deleteBtn).forEach((item) => {
-deleteBtn[item].addEventListener('click', (e) => {
-  let index = item;
-  products = products.splice(...index, 1)
-  location.reload()
-}) 
 
 
-})
+// let deleteBtn = [...document.querySelectorAll(".delete")];
+// let productName = document.querySelector('')
+// Object.keys(deleteBtn).forEach((item) => {
+// deleteBtn[item].addEventListener('click', (e) => {
+//   let index = item;
+//   products = products.splice(...index, 1)
+//   location.reload()
+// })
 
-// function deleteProduct (id) {
-  
-// }
+// })
 
+let sum = products.reduce((a, b) => {
+  return a.productPrice + b.productPrice;
+}, 0);
+let totalPrice = document.querySelector("#amount");
+totalPrice.append(sum);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// //Checkout button
+// let checkoutButton = document.querySelector('.checkout-btn');
+// checkoutButton.addEventListener('click', (e)=>{
+//   alert(`-R ${sum}`)
+//   alert('Thank you for your Purchase')
+//   checkoutItems = [];
+//   localStorage.setItem('checkout', JSON.stringify(checkoutItems))
+//   location.reload();
+// })

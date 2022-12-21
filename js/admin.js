@@ -22,13 +22,13 @@ display();
 
 
 let AddBtn = document.querySelector(".btn-add");
-let id = document.getElementById("id").value;
-let ProductImage = document.getElementById("image").value;
-let productName = document.getElementById("name").value;
-let productPrice = document.getElementById("price").value;
-let productQuantity = document.getElementById("quantity").value;
 function addProduct() {
   document.querySelector(".table-body").innerHTML += ""
+  let id = document.getElementById("id").value;
+  let ProductImage = document.getElementById("image").value;
+  let productName = document.getElementById("name").value;
+  let productPrice = document.getElementById("price").value;
+  let productQuantity = document.getElementById("quantity").value;
 
   products.push({
     id: id,
@@ -53,11 +53,33 @@ sortByNameBtn.addEventListener('click', () => {
   localStorage.setItem("products", JSON.stringify(products));
 })
 
+let sortByNameDesBtn = document.querySelector('#sort-name-descending') 
+sortByNameDesBtn.addEventListener('click', () => {
+  document.querySelector(".table-body").innerHTML = ""
+  products.sort((a, b)=>{
+    return a.productName > b.productName ? -1 : 1
+  })
+  display();
+  localStorage.setItem("products", JSON.stringify(products));
+})
+
+
+
 let sortByNumberBtn = document.querySelector('#sort-number')
 sortByNumberBtn.addEventListener('click', () => {
   document.querySelector(".table-body").innerHTML = ""
   products.sort((a, b)=>{
     return a.id > b.id ? -1 : 1
+  })
+  display();
+  localStorage.setItem("products", JSON.stringify(products));
+})
+
+let sortByNumberDesBtn = document.querySelector('#sort-number-descending')
+sortByNumberDesBtn.addEventListener('click', () => {
+  document.querySelector(".table-body").innerHTML = ""
+  products.sort((a, b)=>{
+    return a.id < b.id ? -1 : 1
   })
   display();
   localStorage.setItem("products", JSON.stringify(products));

@@ -29,6 +29,12 @@
     </div>
 
     <section id="checkout">
+        <div class="container-fluid">
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
         <div id="sort" class=" d-flex justify-content-center g-2 py-5 container" >
             <!-- Button trigger modal -->
          <button type="button" data-bs-toggle="modal" data-bs-target="#modal">
@@ -71,13 +77,19 @@
                 </div>
               </div>
          </div>
-         <!-- Filter $ Sort -->
-            <button id="sort-name">Abc</button>
-            <button id="sort-number">123</button>
-            <button>Price</button>
-            <button>Name</button>
-            <button>Id</button>
+                <!-- Filter $ Sort -->
+                <button id="sort-name">Abc</button>
+                <button id="sort-name-descending">Cba</button>
+                <button id="sort-number">123</button>
+                <button id="sort-number-descending">321</button>
+                <select name="Filter" id="filter">
+                    <option value="">Filter</option>
+                    <option value="">R 0-100</option>
+                    <option value="">R 101-200</option>
+                    <option value="">R 201<</option>
+                </select>
         </div>
+
         <table>
             <thead>
                 <tr>
