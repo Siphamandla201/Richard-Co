@@ -1,9 +1,22 @@
 const checkoutEl = document.querySelector("#checklistDisplay");
 let checkout = JSON.parse(localStorage.getItem("checkout")) || [];
 
-// Function to display the checkout list
+const delivery = 250.00;
+const sale = 50.00;
+
+
+
+
 function displayChecklist() {
-  checkoutEl.innerHTML = ""; // Clear the current content
+  checkoutEl.innerHTML = ""; 
+  if (checkout.length === 0) {
+  checkoutEl.innerHTML = `
+  <h4 class="empty-checklist">
+    There’s nothing in your bag yet. Sign in or create an account to unlock members-only rewards and personalised recommendations.
+  </h4>
+  <a class="shop-now" href="../index.html">Shop Now</a>
+  `
+};
   for (let i = 0; i < checkout.length; i++) {
     checkoutEl.innerHTML += `
       <div>
@@ -34,47 +47,75 @@ function displayChecklist() {
       </div>
     `;
   }
-  attachDeleteEventListeners(); // Attach event listeners to the delete buttons
+  attachDeleteEventListeners(); 
+  displayTotal();
 }
 
-// Function to attach event listeners to delete buttons
 function attachDeleteEventListeners() {
   const deleteButtons = document.querySelectorAll(".delete");
   deleteButtons.forEach((button) => {
     button.addEventListener("click", (e) => {
       const productId = e.target.getAttribute("data-id");
-      removeProduct(productId); // Remove the product when the button is clicked
+      removeProduct(productId);
     });
   });
 }
 
 // Function to remove a product from the checkout list
 function removeProduct(productId) {
-  // Update the checkout array in memory
   checkout = checkout.filter((product) => product.id != productId);
-  // Update localStorage with the new checkout array
   localStorage.setItem("checkout", JSON.stringify(checkout));
-  // Re-display the checklist with updated data
   displayChecklist();
-  // Update the total price display
+
   displayTotal();
 }
 
-// Initial display of the checkout list
 displayChecklist();
+
+
 
 // Function to calculate the total price
 function productTotal() {
-  return checkout.reduce((total, product) => total + product.productPrice, 0);
+  console.log(delivery)
+  return checkout.reduce((total, product) => total + product.productPrice , 0) + delivery - sale;
 }
 
-// Function to display the total price
+function subTotal() {
+  console.log(delivery)
+  return checkout.reduce((total, product) => total + product.productPrice , 0);
+}
+
+
 function displayTotal() {
-  const total = document.querySelector("#amount p");
-  if (total) {
-    total.textContent = `R ${productTotal()}`;
-  }
-}
+  const total = document.querySelector("#amount .amount");
 
-// Initial display of the total price
-displayTotal();
+  const tableData = document.querySelector(".checkout-total");
+  tableData.innerHTML = `
+   <div id="priceTotal">
+      <div><p>Summary</p></div>
+      <table>
+          <thead>
+              <tr>
+                  <td>Sub Total</td>
+                  <td>Delivery</td>
+                  <td>Sale</td>
+              </tr>
+          </thead>
+          <tbody class="tableData">
+              <tr>
+                <td>R${subTotal()}</td>
+                <td>R${delivery}</td>
+                <td>-R${sale}</td>
+              </tr>
+          </tbody>
+      </table>
+      <hr>
+      <div id="amount">
+          <p>TOTAL</p>
+            <p class="amount">R ${productTotal()}</p>
+      </div>
+      <button class="checkout-btn">Checkout</button>
+    </div> 
+    
+  `
+}

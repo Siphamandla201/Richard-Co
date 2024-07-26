@@ -48,7 +48,7 @@ body {
         color: #fff;
         text-decoration: underline;
         height: 36px;
-        font-size: 14px; 
+        font-size: 15px; 
         font-weight: 100;
         padding: 6px;
         text-align: center;
@@ -90,7 +90,7 @@ body {
 
                     .nav-link {
                         color: #000;
-                        font-size: 14px;
+                        font-size: 15px;
                         font-weight: 200;
                         text-decoration: none;
                     }
@@ -190,7 +190,7 @@ body {
     margin-top: 50px;
 
     .page-header {
-        margin: 40px 0px;
+        margin: 40px 0px 10px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -213,8 +213,24 @@ body {
 
         .checkout-items {
             width: 75%;
+            margin-bottom: 60px;
     
             #checklistDisplay {
+                .empty-checklist {
+                    font-size: 16px;
+                    width: 70%;
+                    font-weight: 300;
+                    margin-bottom: 10px;
+                    line-height: 25px;
+                }
+
+                .shop-now {
+                    color: #000;
+                    font-size: 14px;
+                    font-weight: 300;
+                    word-spacing: 1.5px;
+                }
+
                 .disclaimer {
                     text-align: end;
                 }
@@ -241,7 +257,7 @@ body {
                         p {
                             margin: 0px;
                             font-weight: 100;
-                            font-size: 14px;
+                            font-size: 15px;
                         }
                     }
 
@@ -278,80 +294,90 @@ body {
 
         .checkout-total {
             width: 20%;
+
+            #priceTotal {
+                div {
+                    p {
+                        font-size: 22px;
+                        font-weight: 100;
+                    }
+                }
+
+                table{
+                    display: flex; 
+                    justify-content: space-between; 
+                    margin-top: 35px;
+                    
+                    td {
+                        margin: 7px 0px;
+                    }
+
+                    thead {
+                        tr {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: start;
+                            td {
+                                border: none;
+                                font-size: 15px;
+
+                            }
+                        }
+                    }
+
+                    tbody {
+                        tr {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: end;
+                            td {
+                                border: none;
+                                font-size: 15px;
+                                font-weight: 100;
+
+                            }
+                        }
+                    }
+                }
+
+                hr {
+                    margin: 15px 0px;
+                }
+
+                #amount {
+                    width: 100%;
+
+                    display: flex;
+                    justify-content: space-between;
+
+                    p {
+                        padding: 0px;
+                        margin: 0px;
+                        font-size: 15px;
+                        font-weight: 600;
+                    }
+                }
+
+                .checkout-btn {
+                    width: 100%;
+                    height: 40px;
+                    text-align: center;
+                    font-weight: 500;
+                    background-color: #000;
+                    color: #fff;
+                    border: none;
+                    border-radius: 7px;
+                    margin: 20px 0px;
+                }
+
+                .checkout-btn:hover {
+                    background-color: #222;
+                }
+            }
         }
     }
 }
 
-#checkout > #sort {
-    gap: 20px;
-}
-
-#checkout > #sort > button {
-   background-color: #cdebbc; 
-   width: 170px;
-   height: 45px;
-   border-radius: 10px;
-}
-
-#checkout > #sort > button:hover {
-    background-color:#999ba1;
-}
-
-#checkout > #sort > select {
-    background-color: #cdebbc; 
-    width: 180px;
-    height: 45px;
-    border-radius: 10px;
-    border: 2px solid black;
-}
-
-#checkout > #sort > select:hover {
-    background-color:#999ba1;
-}
-
-
-#checkout > table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px; 
-}
-
-#checkout > table > thead {
-    font-weight: 700;
-}
-
-td {
-    border: 2px solid #999ba1;
-    text-align: center;
-    padding: 10px;
-}
-
-td > input {
-    width: 50px;
-    padding-left: 10px;
-}
-
-td > button {
-    width: 90px;
-    height: 40px;
-    text-align: center;
-    padding-left: 10px;
-    background-color: #cdebbc;
-    border-radius: 10px;
-}
-
-td > button > p {
-    padding-bottom: 20px;
-    padding-right: 5px;
-}
-
-
-
-#priceTotal > #amount {
-    border: 2px solid #999ba1;
-    margin-left: 10px;
-    width: 70px;
-}
 
 
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! FOOTER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
