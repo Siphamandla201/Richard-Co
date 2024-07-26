@@ -7,28 +7,66 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="../style/styles.css">
-    <title>Document</title>
+    <title>Checkout</title>
 </head>
 
 <body>
+    <div class="text-center" style="background-color: #222; color: #fff;text-decoration: underline;height: 36px;font-size: 14px; font-weight: 200;padding: 6px;">Buy now and get 15% off your first app order</div>
 
-    <section id="header">
-        <h4>The Richard Foundation</h4>
-
-        <div>
-            <ul id="navbar">
-                <li><a href="../index.html">Home</a></li>
-                <li><a class="active" href="checkout.html">Checkout</a></li>
-                <li><a href="admin.html">Admin</a></li>
+    <section id="navigation-and-logo">
+        <nav id="nav-bar">
+          <a class="logo" href="../index.html">The Richard Foundation</a>
+          <div >
+            <ul class="nav-list">
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="checkout.html">Checkout</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="admin.html">Admin</a>
+              </li>
             </ul>
-        </div>
+          </div>
+        </nav>
     </section>
 
-    <div>
-        <hr><h2 class="div">Checkout</h2><hr>
-    </div>
-
     <section id="checkout">
+        <div class="page-header">
+            <h4 >
+                Shopping Bag
+            </h4>
+
+            <p>
+                <a href="../index.html">
+                    Continue Shopping
+                </a>
+            </p>
+
+        </div>
+
+        <div class="main-content">
+            
+            <div class="checkout-items">
+                <div id="checklistDisplay">
+    
+                </div>
+            </div>
+            <div class="checkout-total">
+                <div id="priceTotal">
+                    <div><p>Summary</p></div>
+                    <div id="amount"><p>R</p></div>
+                </div> 
+            </div>
+            
+        </div>
+
+    </section>
+
+
+
+    <!-- <section>
         <table>
             <thead>
                 <tr>
@@ -46,11 +84,11 @@
         <div id="priceTotal">
             <div><p>TOTAL</p></div>
             <div id="amount"><p>R</p></div>
-        </div>
+        </div>        
         <div>
             <button>Purchase</button>
         </div>
-    </section>
+    </section> -->
 
     <footer>
         <div class="contact">

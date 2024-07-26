@@ -8,22 +8,24 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! GLOBAL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
 h1 {
     font-size: 50px;
     line-height: 64px;
-    color: #222;
+    color: #000;
 }
 
 h2 {
     font-size: 46px;
     line-height: 54px;
-    color: #222;
+    color: #000;
     text-align: center;
 }
 
 h4 {
     font-size: 20px;
-    color: #222;
+    color: #000;
 }
 
 h6 {
@@ -33,173 +35,251 @@ h6 {
 
 p {
     font-size: 16px;
-    color: #465b52;
+    color: #000;
     margin: 15px 0 20px 0;
 }
 
-.section {
-    padding: 40px 80px;
-}
-
-
 body {
     width: 100%;
-    background-color: #088178;
+    background-color: #fff;
+
+    .marquee {
+        background-color: #222;
+        color: #fff;
+        text-decoration: underline;
+        height: 36px;
+        font-size: 14px; 
+        font-weight: 100;
+        padding: 6px;
+        text-align: center;
+    }
 }
 
- /* NavBar */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! NAVBAR !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+#navigation-and-logo {
+    
+    #nav-bar {
+        height: 50px;
+        display: flex;
+        padding: 30px 60px 20px;
+        justify-content: space-between;
+        align-items: center;
 
- #header {
-     display: flex;
-     align-items: center;
-     justify-content: space-between;
-     padding: 20px 80px;
-     background-color: #999ba1;
-     box-shadow: 0 5px 15px rgba( 0, 0, 0, 0.06);
-     z-index: 999;
-     position: sticky;
-     top: 0;
-     left: 0;
- }
+        .logo {
+            color: #000;
+            text-decoration: none;
+            font-size: 25px;
+            word-spacing: 0.3px;
+            font-weight: 600;
+        }
 
- .logo { 
-     text-align: start;
-     padding: 0;
- }
+        .logo:hover{
+            color: #000;
+            cursor: pointer;
+        }
 
+        div {
+            .nav-list {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
 
-#navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+                .nav-item {
+                    list-style: none;
+
+                    .nav-link {
+                        color: #000;
+                        font-size: 14px;
+                        font-weight: 200;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
 }
 
-#navbar > ul {
-    text-align: end;
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! BANNER NO.1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+.banner {
+    width: 80%;
+    height: 350px;
+    background-color: #e6e6e6;
+    margin: 100px 10% 80px;
+    
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! HOME DASHBOARD !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+#feature {
+    padding: 10px 60px;
+
+    .featured-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        button {
+           width: 100px;
+           height: 30px;
+           font-size: 15px; 
+           font-weight: 500;
+           border-radius: 5PX;
+           background-color: #fff;
+           cursor: pointer;
+        }
+    }
+
+    .featured-items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 32px;
+
+        .featured-item {
+            width: 325px;
+
+            img {
+                width: 100%;
+                object-fit: contain;
+            }
+
+            img:hover {
+                object-fit: cover;
+                
+            }
+
+            .des {
+                margin: 10px 0px;
+                height: 40px;
+                margin-bottom: 10px;
+
+                h5 {
+                    font-size: 16px;
+                    font-weight: 700;
+                    margin: 5px 0px 5px;
+                }
+
+                p {
+                    font-size: 15px;
+                    color: #222;
+                    word-wrap: normal;
+                    padding: 0px;
+                    margin: 0px;
+                }
+            }
+
+            p {
+                font-size: 15px;
+                color: #222;
+                word-wrap: normal;
+                padding: 0px;
+                margin: 0px;
+            }
+        }
+    }
 }
 
 
-#navbar > li {
-    list-style: none;
-    padding: 0 20px;
-    position: relative;
-}
-
-#navbar > li > a {
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    color: #1a1a1a;
-    transition: 0.3s ease;
-}
-
-#navbar > li > a:hover,
-#navbar > li > a.active {
-    color: #088178;
-}
-
-#navbar > li > a.active::after,
-#navbar > li > a:hover::after {
-    content: "";
-    width: 30%;
-    height: 2px;
-    background:  #088178;
-    position: absolute;
-    bottom: -4px;
-    left: 20px;
-}
-
-/* Home */
-
-#banner > img {
-    /* background-image: url("../assets/images/bacground1.png"); */
-    height: 90vh;
-    width: 100%;
-    background-size: cover;
-    background-position: top 25% right 0;
- }
-
- .div {
-    background-color: #088178;
- }
-
- hr {
-    margin: 0%;
-    color: #1a1a1a;
- }
-
- .section{
-    width: 100%;
-    background-color: #088178;
- }
-
- #feature{
-     display: flex;
-     align-items: center;
-     justify-content: space-between;
-     flex-wrap: wrap;
- }
-
- #feature > .featured-item {
-     width: 180px;
-     text-align: center;
-     padding: 25px 15px;
-     box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
-     border: 1px solid #cce7d0;
-     border-radius: 4px;
-     margin: 15px 0;
-
- }
-
- #feature > .featured-item > img {
-     width: 100%;
-     margin-bottom: 10px;
- }
-
- #feature > .featured-item > button {
-     padding: 9px 8px 6px 8px;
-     line-height: 1;
-     border-radius: 4px;
-     color: #088178;
-     background-color: #cdebbc;
- }
-
- img {
-     width: 150px;
-     height: 135px;
-     border-radius: 5px;
- }
-
- footer {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #999ba1;
- }
-
- footer > .contact {
-    padding: 25px;
- }
-
- footer > h4 {
-     font-size: 20px;
- }
-
- footer > p {
-    font-size: 15px;
-}
-
-footer > .copyright {
-    padding-top: 202px;
-    padding-right: 70px;
-    margin: auto;
-}
-
-/* Checkout nad Admin */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! CHECKOUT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
 #checkout {
-    background-color: #088178;
+    background-color: #fff;
     height: auto;
-    padding: 100px;
+    padding: 10px 60px 0px;
+    margin-top: 50px;
+
+    .page-header {
+        margin: 40px 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h4 {
+            font-size: 30px;
+            font-weight: 600;
+        }
+
+        p {
+            a {
+                color: #000;
+            }
+        }
+    }
+
+    .main-content {
+        display: flex;
+        gap: 50px;
+
+        .checkout-items {
+            width: 75%;
+    
+            #checklistDisplay {
+                .disclaimer {
+                    text-align: end;
+                }
+
+                .item {
+                    width: 100%;
+                    padding: 24px 12px;
+                    display: flex;
+                    justify-content: space-between;
+
+                    img {
+                        width: 120px;
+                        height: 120px;
+                        object-fit: contain;
+                    }
+
+                    .item-info {
+                        h4 {
+                            margin: 0px;
+                            font-size: 16px;
+                            font-weight: 600;
+                        }
+
+                        p {
+                            margin: 0px;
+                            font-weight: 100;
+                            font-size: 14px;
+                        }
+                    }
+
+                    .price {
+                        width: 150px;
+                    }
+
+                    .quantity {
+                        width: 250px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: start;
+                        
+                        p {
+                            margin: 0px;
+                        }
+
+                        button {
+                          height: 20px;
+                          width: 20px;
+                          background-color: transparent;
+                          border: none;
+                          color: #000;
+                        }
+
+                    }
+
+
+                }
+    
+            }
+
+        }
+
+        .checkout-total {
+            width: 20%;
+        }
+    }
 }
 
 #checkout > #sort {
@@ -272,6 +352,16 @@ td > button > p {
     margin-left: 10px;
     width: 70px;
 }
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! FOOTER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #e6e6e6;
+    padding: 20px 60px;
+ }
 
 
 

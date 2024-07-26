@@ -1,74 +1,80 @@
 const checkoutEl = document.querySelector("#checklistDisplay");
-console.log(products);
+let checkout = JSON.parse(localStorage.getItem("checkout")) || [];
+
+// Function to display the checkout list
 function displayChecklist() {
-  for (let i = 0; i < products.length; i++) {
-    let products = JSON.parse(localStorage.getItem("checkout")) || [];
+  checkoutEl.innerHTML = ""; // Clear the current content
+  for (let i = 0; i < checkout.length; i++) {
     checkoutEl.innerHTML += `
-        <tr>
-           <td><button class="delete">🚮</button></td>
-           <td>${products[i].id}</td>
-           <td><img src="${products[i].productImage}" alt=""></td>
-           <td>${products[i].productName}</td>
-           <td>${products[i].productPrice}</td>
-           <td>${products[i].productQuantity}</td>
-        </tr>
-     `;
+      <div>
+        <div class="disclaimer">
+          <p>you may have to pay import duties</p>
+          <hr>
+        </div>
+        <div class="item">
+          <img src="${checkout[i].productImage}" alt="">
+
+          <div class="item-info">
+            <h4>${checkout[i].productBrand}</h4>
+            <p style="margin-top:1px;">${checkout[i].productName}</p>
+            <p style="margin-top:3px;">PRODUCT ID : ${checkout[i].id}</p>
+          </div>
+
+          <p class="price">${checkout[i].productPrice}</p>
+          
+          <div class="quantity">
+            <div>  
+              <p>Quantity 
+              <br> ${checkout[i].productQuantity} 
+              <span>change</span></p>
+            </div>
+            <button class="delete" data-id="${checkout[i].id}">🚮</button>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+  attachDeleteEventListeners(); // Attach event listeners to the delete buttons
+}
+
+// Function to attach event listeners to delete buttons
+function attachDeleteEventListeners() {
+  const deleteButtons = document.querySelectorAll(".delete");
+  deleteButtons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      const productId = e.target.getAttribute("data-id");
+      removeProduct(productId); // Remove the product when the button is clicked
+    });
+  });
+}
+
+// Function to remove a product from the checkout list
+function removeProduct(productId) {
+  // Update the checkout array in memory
+  checkout = checkout.filter((product) => product.id != productId);
+  // Update localStorage with the new checkout array
+  localStorage.setItem("checkout", JSON.stringify(checkout));
+  // Re-display the checklist with updated data
+  displayChecklist();
+  // Update the total price display
+  displayTotal();
+}
+
+// Initial display of the checkout list
+displayChecklist();
+
+// Function to calculate the total price
+function productTotal() {
+  return checkout.reduce((total, product) => total + product.productPrice, 0);
+}
+
+// Function to display the total price
+function displayTotal() {
+  const total = document.querySelector("#amount p");
+  if (total) {
+    total.textContent = `R ${productTotal()}`;
   }
 }
 
-displayChecklist();
-
-function productTotal() {}
-
-let total = document.querySelector(".priceTotal");
-
-function displayTotal() {
-  const amount = productTotal();
-}
-
-
-
-// let deleteBtn = [...document.querySelectorAll(".delete")];
-// let productName = document.querySelector('')
-// Object.keys(deleteBtn).forEach((item) => {
-// deleteBtn[item].addEventListener('click', (e) => {
-//   let index = item;
-//   products = products.splice(...index, 1)
-//   location.reload()
-// })
-
-// })
-
-let sum = products.reduce((a, b) => {
-  return a.productPrice + b.productPrice;
-}, 0);
-let totalPrice = document.querySelector("#amount");
-totalPrice.append(sum);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// //Checkout button
-// let checkoutButton = document.querySelector('.checkout-btn');
-// checkoutButton.addEventListener('click', (e)=>{
-//   alert(`-R ${sum}`)
-//   alert('Thank you for your Purchase')
-//   checkoutItems = [];
-//   localStorage.setItem('checkout', JSON.stringify(checkoutItems))
-//   location.reload();
-// })
+// Initial display of the total price
+displayTotal();
